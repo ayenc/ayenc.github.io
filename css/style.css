@@ -1,0 +1,89 @@
+.row h4{
+	color:#ed1e79;
+}
+
+/* ------------ Menu Style -----------*/
+
+.logo{
+	margin-top:-5px;
+}
+
+.nav-style a:hover,
+.nav-style a.active{
+	color: #ed1e79 !important;
+	font-weight: 500;
+}
+
+/* ------------ Sub Menu Style -----------*/
+
+.center-style{
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 0.8em;
+}
+
+.center-style button{
+	margin: 2px;
+	padding:3px 15px 3px 15px;
+}
+
+.submenu{
+	background-color: #999;
+	color: #fff;
+}
+
+.button:hover,
+.button:active,
+.button.is-checked,
+.button:active:hover{
+	background-color: #ff7bac; 
+	border:none;
+	border:0;
+	outline: 0;
+}
+
+.submenu_btn button{
+	border: none;
+}
+
+/* ------------ Portfolio Style -----------*/
+
+.center-img{
+	margin: 0 auto;
+}
+
+.border-style{
+	border: 1pt solid #999;
+	margin-bottom: 10px;
+}
+
+.port-subheadline{
+	color:#ff7bac !important;
+}
+
+/* ------------ Resume Style -----------*/
+
+.main-headline{
+	color:#ed1e79;
+}
+
+.resume-headline{
+	color:#ed1e79;
+}
+
+/* ------------ Back to Top Style -----------*/
+
+
+
+/* ------------ Footer Style -----------*/
+
+.footer hr{
+	height: 2px;
+	background-color: #ed1e79;
+	color: #ed1e79;
+}
+
+.footer p{
+	font-size: 0.8em;
+	color: #333;
+}
