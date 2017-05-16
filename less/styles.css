@@ -1,46 +1,95 @@
 @import url(https://fonts.googleapis.com/css?family=BenchNine:700);
-html {
+html,
+body {
   font-family: 'BenchNine', Helvetica, Arial, sans-serif;
+  color: #fff;
+  padding: 0;
+  margin: 0;
 }
-header {
+.container {
+  display: block;
+  align-self: center;
+}
+.header,
+.nav,
+.footer {
+  display: block;
+}
+.header {
   font-size: 250%;
   font-weight: 700;
   text-transform: uppercase;
-  justify-self: center;
-  color: black;
-}
-section {
-  display: grid;
-  justify-self: center;
-  align-self: center;
-  padding: 20px;
-}
-header {
-  grid-template-columns: auto-fill;
-  grid-template-rows: 50px;
-  background-color: #fff;
-  color: black;
-}
-nav {
-  grid-template-columns: auto-fill;
-  grid-template-rows: 20px;
-  background-color: #fff;
-  color: black;
-}
-nav {
   text-align: center;
+  background-color: #fff;
+  color: black;
+  margin: 0;
+  padding: 0;
 }
-nav ul {
+h1 {
+  padding: 0;
+  margin: 0;
+}
+.nav {
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.nav ul {
   display: block;
+  margin: 0 0 20px 0;
+  padding: 0;
 }
-nav ul li {
+.nav ul li {
   display: inline-block;
-  padding: 2vw;
+  padding: .3vw 1vw;
+  border: 0;
+  position: relative;
+  margin-left: 50px;
+  text-align: center;
+  background-color: #fff;
+  color: black;
 }
-main {
-  display: subgrid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+.nav ul li:before {
+  border-color: maroon;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30%;
+  opacity: .2;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav ul li:after {
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  right: -5px;
+  bottom: -5px;
+}
+.nav ul li:hover:before,
+.nav ul li:hover:after {
+  opacity: .5;
+  transform: scale(2, 2);
+  transition: .3s ease;
+}
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
+  padding: 2vw;
   background-color: #444;
 }
 .box {
@@ -54,41 +103,19 @@ main {
   width: 100%;
   height: 100%;
   opacity: .8;
-  transition: .5s ease;
+  transition: 2s ease-in-out;
   text-transform: uppercase;
-}
-div > .box:before,
-div > .box:after {
-  border-color: #fff;
-  border-width: 0;
-  border-style: solid;
-  transition: all 0.25s;
-  content: "";
-  height: 50px;
-  position: absolute;
-  width: 50px;
-}
-div > .box:before {
-  border-left-width: 2px;
-  border-top-width: 2px;
-  left: -5px;
-  top: -5px;
-}
-div > .box:after {
-  border-bottom-width: 2px;
-  border-right-width: 2px;
-  bottom: -5px;
-  right: -5px;
 }
 .description {
   background-color: maroon;
-  color: white;
-  font-size: 24px;
   opacity: 0;
   position: absolute;
   width: 100%;
   top: 0;
   overflow: hidden;
-  transition: all 300ms;
-  align-items: center;
+  text-align: center;
+}
+.description span {
+  color: white;
+  font-size: 24px;
 }
