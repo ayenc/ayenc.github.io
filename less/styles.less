@@ -5,14 +5,24 @@
 
 //Variables
 @content-bg: #fff;
+@content-font-family: @font-family-2;
 @description-font-family: 'Open Sans Condensed', sans-serif;
 @description-button-font: 'Raleway', sans-serif;
-@font-family: 'BenchNine', Helvetica, Arial, sans-serif;
+@font-family-1: 'BenchNine', Helvetica, Arial, sans-serif;
+@font-family-2: 'Open Sans Condensed', sans-serif;
+@font-family-3: 'Raleway', sans-serif;
 @h2-font-family: 'Raleway', sans-serif;
+@h3-font-family: @font-family-3;
+@h3-font-size: 20pt;
+@h4-font-family: @font-family-1;
+@h4-font-size: 18pt;
+@h5-font-family: @font-family-3;
+@h5-font-size: 14pt;
 @header-bg: #fff;
 @hover-bg: rgba(114,38,38,0.5);
 @hover-font: 'Oswald', sans-serif;
 @last-name-text-color: rgb(170,97,95);
+@mobile-menu-bg: #444;
 @name-color: rgb(170,97,95);
 @nav-bg: none;
 @nav-text-color: rgb(170,97,95);
@@ -26,7 +36,7 @@ html {
 
 html,
 body {
-  font-family: @font-family;
+  font-family: @font-family-1;
   color: contrast(#000, #000, #fff);
   padding: 0;
   margin: 0;
@@ -44,6 +54,23 @@ main {
   margin: 0 auto;
 }
 
+h3 {
+  font-family: @h3-font-family;
+  font-size: @h3-font-size;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-family: @h4-font-family;
+  font-size: @h4-font-size;
+}
+
+h5 {
+  font-family: @h5-font-family;
+  font-size: @h5-font-size;
+  text-transform: uppercase;
+}
+
 header {
   display: inline-flex;
   width: 100%;
@@ -51,7 +78,7 @@ header {
   background-color: @header-bg;
   color: contrast(@header-bg, black, white);
   margin: 0;
-  padding: 20px;
+  padding: 5px;
   .logo {
     width: 35px;
     height: auto;
@@ -63,8 +90,8 @@ header {
     }
   }
   .name {
-    font-size: 250%;
-    margin-left: 15px;
+    font-size: 200%;
+    margin: 10px 10px 10px 2px;
     text-transform: uppercase;
     align-content: center;
     span {
@@ -82,31 +109,40 @@ header {
 }
 
 nav {
-  background-color: @header-bg;
-  color: contrast(@header-bg, black, white);
-  text-align: center;
+  background-color: @nav-bg;
+  color: contrast(@nav-bg, black, white);
   margin: 0;
   padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
 }
 
 nav ul {
-  display: block;
-  margin: 0 0 20px 0;
+  margin: 0px;
   padding: 0;
+  &.nav-links {
+    @media all and (min-width: 701px){
+      display: block;
+    }
+    @media all and (max-width: 700px) {
+      display: none;
+    }
+  }
 }
-
 nav ul li {
   display: inline-block;
   border: 0;
   position: relative;
-  margin: 15px 25px;
+  margin: 25px 3px;
   outline: none;
   text-align: center;
   background-color: @nav-bg;
   color: contrast(@nav-bg, black, white);
   a {
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 1px;
     text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
     color: @nav-text-color;
@@ -152,15 +188,47 @@ nav ul li {
     }
   }
 }
+@media all and (max-width: 700px) {
+  nav ul.nav-open {
+    display: block;
+    background: #000;
+    position: absolute;
+    padding: 20px;
+    right: 0px;
+    top: 67px;
+    width: 150px;
+    border: 1px solid #000;
+    li {
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
+        text-align:center;
+    }
+  }
+}
+.menu {
+  color: @mobile-menu-bg;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 0 20px;
+  line-height: 30px;
+  @media all and (min-width: 701px){
+    display: none;
+  }
+  @media all and (max-width: 700px) {
+    display: block;
+  }
+}
 
 .wrapper {
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  border-top: 1pt solid #333;
 }
 
 .container {
-  border-top: 1pt solid #333;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -316,4 +384,17 @@ nav ul li {
       color: #fff;
     }
   }
+}
+
+.content {
+  font-family: @content-font-family;
+  color: contrast(@content-bg, black, white);
+  position: relative;
+  width: 100%;
+  min-width: 701px;
+  max-width: 1280px;
+  height: auto;
+  text-align: left;
+  padding: 0;
+  margin: 20px 20px 0;
 }

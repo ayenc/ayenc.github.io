@@ -21,6 +21,20 @@ main {
   position: relative;
   margin: 0 auto;
 }
+h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20pt;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: 'BenchNine', Helvetica, Arial, sans-serif;
+  font-size: 18pt;
+}
+h5 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14pt;
+  text-transform: uppercase;
+}
 header {
   display: inline-flex;
   width: 100%;
@@ -28,7 +42,7 @@ header {
   background-color: #fff;
   color: black;
   margin: 0;
-  padding: 20px;
+  padding: 5px;
 }
 header .logo {
   width: 35px;
@@ -39,8 +53,8 @@ header .logo > a > img {
   max-height: 100%;
 }
 header .name {
-  font-size: 250%;
-  margin-left: 15px;
+  font-size: 200%;
+  margin: 10px 10px 10px 2px;
   text-transform: uppercase;
   align-content: center;
 }
@@ -56,22 +70,34 @@ header > h1 {
   padding: .5vw 2vw;
 }
 nav {
-  background-color: #fff;
-  color: black;
-  text-align: center;
+  background-color: none;
+  color: contrast(none, black, white);
   margin: 0;
   padding: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3;
 }
 nav ul {
-  display: block;
-  margin: 0 0 20px 0;
+  margin: 0px;
   padding: 0;
+}
+@media all and (min-width: 701px) {
+  nav ul.nav-links {
+    display: block;
+  }
+}
+@media all and (max-width: 700px) {
+  nav ul.nav-links {
+    display: none;
+  }
 }
 nav ul li {
   display: inline-block;
   border: 0;
   position: relative;
-  margin: 15px 25px;
+  margin: 25px 3px;
   outline: none;
   text-align: center;
   background-color: none;
@@ -79,7 +105,7 @@ nav ul li {
 }
 nav ul li a {
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: 1px;
   text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
   color: #aa615f;
@@ -124,13 +150,49 @@ nav ul li a.active:after {
   -webkit-transform: translateX(0px);
   -moz-transform: translateX(0px);
 }
+@media all and (max-width: 700px) {
+  nav ul.nav-open {
+    display: block;
+    background: #000;
+    position: absolute;
+    padding: 20px;
+    right: 0px;
+    top: 67px;
+    width: 150px;
+    border: 1px solid #000;
+  }
+  nav ul.nav-open li {
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+.menu {
+  color: #444;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  padding: 0 20px;
+  line-height: 30px;
+}
+@media all and (min-width: 701px) {
+  .menu {
+    display: none;
+  }
+}
+@media all and (max-width: 700px) {
+  .menu {
+    display: block;
+  }
+}
 .wrapper {
   max-width: 100%;
   margin: 0 auto;
   position: relative;
+  border-top: 1pt solid #333;
 }
 .container {
-  border-top: 1pt solid #333;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -283,4 +345,16 @@ nav ul li a.active:after {
     background-color: #000;
     color: #fff;
   }
+}
+.content {
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: black;
+  position: relative;
+  width: 100%;
+  min-width: 701px;
+  max-width: 1280px;
+  height: auto;
+  text-align: left;
+  padding: 0;
+  margin: 20px 20px 0;
 }
