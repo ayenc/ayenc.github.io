@@ -1,33 +1,39 @@
 //Imports
 @import url('https://fonts.googleapis.com/css?family=BenchNine:700');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Oswald:500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i|Open+Sans:300i,400,700|Roboto');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
 //Variables
 @content-bg: #fff;
-@content-font-family: @font-family-2;
+@content-font-family: @font-family-4;
+@content-p-font-size: 10pt;
+@content-p-font-color: #444;
+@content-text-color: #222;
 @description-font-family: 'Open Sans Condensed', sans-serif;
 @description-button-font: 'Raleway', sans-serif;
 @font-family-1: 'BenchNine', Helvetica, Arial, sans-serif;
 @font-family-2: 'Open Sans Condensed', sans-serif;
 @font-family-3: 'Raleway', sans-serif;
+@font-family-4: 'Open Sans', sans-serif;
 @h2-font-family: 'Raleway', sans-serif;
 @h3-font-family: @font-family-3;
-@h3-font-size: 20pt;
-@h4-font-family: @font-family-1;
-@h4-font-size: 18pt;
+@h3-font-size: 18pt;
+@h4-font-family: @font-family-4;
+@h4-font-size: 14pt;
 @h5-font-family: @font-family-3;
-@h5-font-size: 14pt;
+@h5-font-size: 10pt;
 @header-bg: #fff;
+@header-border-bottom-color: rgba(170,97,95,.3);
 @hover-bg: rgba(114,38,38,0.5);
 @hover-font: 'Oswald', sans-serif;
+@item-border-color: #bfbfbf;
+@item-p-font-family: @font-family-2;
 @last-name-text-color: rgb(170,97,95);
 @mobile-menu-bg: #444;
 @name-color: rgb(170,97,95);
 @nav-bg: none;
 @nav-text-color: rgb(170,97,95);
 @nav-text-color-hover: rgba(114,38,38,0.5);
-@item-border-color: #bfbfbf;
 
 //Styling
 html {
@@ -44,8 +50,15 @@ body {
 
 header,
 nav,
+h3,
+h4,
+h5,
+p,
+img,
 footer {
   display: block;
+  padding: 0;
+  margin: 0;
 }
 
 main {
@@ -63,17 +76,29 @@ h3 {
 h4 {
   font-family: @h4-font-family;
   font-size: @h4-font-size;
+  margin: .5vw 0 2vw;
+  font-weight: 300;
+  font-style: italic;
 }
 
 h5 {
   font-family: @h5-font-family;
   font-size: @h5-font-size;
   text-transform: uppercase;
+  margin-top: 2vw;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1vw;
 }
 
 header {
   display: inline-flex;
+  position: fixed;
+  z-index: 99;
   width: 100%;
+  border-bottom: 1pt solid @header-border-bottom-color;
   top: 0;
   background-color: @header-bg;
   color: contrast(@header-bg, black, white);
@@ -82,6 +107,7 @@ header {
   .logo {
     width: 35px;
     height: auto;
+    margin-top: .5vw;
     >a {
       >img {
         max-width: 100%;
@@ -94,6 +120,14 @@ header {
     margin: 10px 10px 10px 2px;
     text-transform: uppercase;
     align-content: center;
+    a {
+      text-decoration: none;
+      &:link,
+      &:visited,
+      &:active {
+        color: #000;
+      }
+    }
     span {
       color: @last-name-text-color;
     }
@@ -113,7 +147,7 @@ nav {
   color: contrast(@nav-bg, black, white);
   margin: 0;
   padding: 0;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 3;
@@ -225,7 +259,7 @@ nav ul li {
   max-width: 100%;
   margin: 0 auto;
   position: relative;
-  border-top: 1pt solid #333;
+  top: 70px;
 }
 
 .container {
@@ -268,6 +302,9 @@ nav ul li {
         font-family: @h2-font-family;
         font-size: 14px;
         text-transform: uppercase;
+      }
+      p {
+        font-family: @item-p-font-family;
       }
       p,
       a {
@@ -388,13 +425,39 @@ nav ul li {
 
 .content {
   font-family: @content-font-family;
-  color: contrast(@content-bg, black, white);
   position: relative;
-  width: 100%;
-  min-width: 701px;
+  color: @content-text-color;
   max-width: 1280px;
   height: auto;
   text-align: left;
   padding: 0;
   margin: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+
+  img.img-responsive.center-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2vw;
+  }
+
+  p {
+    font-size: @content-p-font-size;
+    color: @content-p-font-color;
+    line-height: 1.5;
+  }
+}
+
+img.strom {
+  width: 60%;
+  height: auto;
+  border: 1pt solid #d9d9d9;
+  @media all and (max-width: 700px) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+footer {
+  text-align: center;
 }
