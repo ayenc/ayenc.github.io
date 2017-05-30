@@ -399,9 +399,10 @@ nav ul li a.active:after {
   line-height: 1.5;
 }
 img.strom {
-  width: 60%;
+  width: 70%;
   height: auto;
   border: 1pt solid #d9d9d9;
+  margin-bottom: 20px;
 }
 @media all and (max-width: 700px) {
   img.strom {
@@ -411,4 +412,9 @@ img.strom {
 }
 footer {
   text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  top: 80px;
+  color: #444;
 }
