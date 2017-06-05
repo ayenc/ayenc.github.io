@@ -55,7 +55,7 @@ header {
   position: fixed;
   z-index: 99;
   width: 100%;
-  border-bottom: 1pt solid rgba(170, 97, 95, 0.3);
+  border-bottom: 1pt dashed rgba(170, 97, 95, 0.3);
   top: 0;
   background-color: #fff;
   color: black;
@@ -186,7 +186,7 @@ nav ul li a.active:after {
     right: 0px;
     top: 67px;
     width: 150px;
-    border: 1px solid #000;
+    border: 1px dashed #000;
   }
   nav ul.nav-open li {
     width: 100%;
@@ -255,7 +255,7 @@ nav ul li a.active:after {
   .item .description h2 {
     margin: 25px 30px 10px 30px;
     padding-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
     transition: all .3s linear;
     font-family: 'Raleway', sans-serif;
     font-size: 14px;
