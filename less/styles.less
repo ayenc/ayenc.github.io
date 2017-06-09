@@ -15,6 +15,7 @@
 @font-family-2: 'Open Sans Condensed', sans-serif;
 @font-family-3: 'Raleway', sans-serif;
 @font-family-4: 'Open Sans', sans-serif;
+@footer-font-family: @font-family-4;
 @h2-font-family: 'Raleway', sans-serif;
 @h3-font-family: @font-family-3;
 @h3-font-size: 18pt;
@@ -103,7 +104,7 @@ header {
   background-color: @header-bg;
   color: contrast(@header-bg, black, white);
   margin: 0;
-  padding: 5px;
+  padding: 5px 10px;
   .logo {
     width: 35px;
     height: auto;
@@ -149,7 +150,7 @@ nav {
   padding: 0;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20px;
   z-index: 3;
 }
 
@@ -466,4 +467,6 @@ footer {
   position: relative;
   top: 80px;
   color: #444;
+  font-family: @footer-font-family;
+  font-size: 10px;
 }
