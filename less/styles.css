@@ -250,7 +250,7 @@ nav ul li a.active:after {
     overflow: hidden;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(170, 97, 95, 0.7);
     transition: all .3s linear;
   }
   .item .description a:active,
