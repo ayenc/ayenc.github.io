@@ -243,7 +243,7 @@ nav ul li a.active:after {
     overflow: hidden;
     background-color: #fff;
   }
-  .item .description {
+  .item .description a {
     width: 350px;
     height: 210px;
     position: absolute;
@@ -253,7 +253,13 @@ nav ul li a.active:after {
     background-color: rgba(0, 0, 0, 0.75);
     transition: all .3s linear;
   }
-  .item .description h2 {
+  .item .description a:active,
+  .item .description a:link,
+  .item .description a:visited {
+    text-decoration: none;
+    color: #fff;
+  }
+  .item .description a h2 {
     margin: 50px 30px 10px 30px;
     padding-bottom: 5px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
@@ -263,30 +269,26 @@ nav ul li a.active:after {
     font-weight: 700;
     text-transform: uppercase;
   }
-  .item .description p {
+  .item .description a p {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-  }
-  .item .description p,
-  .item .description a {
     opacity: 0;
     transition: all .3s linear;
     transform: scale(0);
     color: #fff;
   }
-  .item:hover .description {
-    opacity: 1;
-    background-color: rgba(170, 97, 95, 0.9);
-  }
-  .item:hover p,
-  .item:hover a {
+  .item .description a:hover p {
     transform: scale(1);
     opacity: 1;
   }
-  .item:hover h2 {
+  .item .description a:hover h2 {
     margin: 25px 30px 10px 30px;
     border-bottom: 1px solid #ffffff;
     opacity: 1;
+  }
+  .item:hover .description {
+    opacity: 1;
+    background-color: rgba(170, 97, 95, 0.9);
   }
   .item img {
     border: 1pt solid #bfbfbf;
@@ -303,19 +305,6 @@ nav ul li a.active:after {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 15px;
-  }
-  .item a {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-size: 14px;
-    padding: 5px 10px;
-    background-color: #000;
-    color: #fff;
-  }
-  .item a:hover {
-    box-shadow: 0 0 5px #000;
   }
 }
 @media all and (max-width: 700px) {
@@ -330,7 +319,7 @@ nav ul li a.active:after {
     overflow: hidden;
     background-color: #fff;
   }
-  .item .description {
+  .item .description a {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -341,7 +330,13 @@ nav ul li a.active:after {
     transform: scale(1);
     transition: all .3s linear;
   }
-  .item .description h2 {
+  .item .description a:active,
+  .item .description a:link,
+  .item .description a:visited {
+    text-decoration: none;
+    color: #fff;
+  }
+  .item .description a h2 {
     margin: 30px 30px 10px 30px;
     padding-bottom: 5px;
     border-bottom: 1px solid #ffffff;
@@ -351,8 +346,8 @@ nav ul li a.active:after {
     font-weight: 400;
     text-transform: uppercase;
   }
-  .item .description p,
-  .item .description a {
+  .item .description a p,
+  .item .description a a {
     opacity: 1;
     color: #fff;
   }
@@ -372,36 +367,26 @@ nav ul li a.active:after {
     font-size: 15px;
     font-weight: 300;
   }
-  .item a {
-    display: inline-block;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Raleway', sans-serif;
-    font-size: 70%;
-    padding: 5px 10px;
-    background-color: #000;
-    color: #fff;
-  }
 }
 .item:nth-child(3) {
   order: 1;
 }
-.item:nth-child(3) .description {
+.item:nth-child(3) .description a {
   background-color: rgba(244, 213, 141, 0.8);
 }
-.item:nth-child(3) .description h2 {
+.item:nth-child(3) .description a h2 {
   border-color: rgba(0, 0, 0, 0.4);
 }
-.item:nth-child(3) .description,
+.item:nth-child(3) .description a p {
+  color: #000000;
+}
+.item:nth-child(3) .description a,
 .item:nth-child(3) p,
 .item:nth-child(3) h2 {
   color: rgba(0, 0, 0, 0.6);
 }
-.item:nth-child(3):hover p {
-  color: #000000;
-}
 @media all and (max-width: 700px) {
-  .item:nth-child(3) .description,
+  .item:nth-child(3) .description a,
   .item:nth-child(3) p,
   .item:nth-child(3) h2 {
     color: #000000;
@@ -410,22 +395,22 @@ nav ul li a.active:after {
 .item:nth-child(4) {
   order: 1;
 }
-.item:nth-child(4) .description {
+.item:nth-child(4) .description a {
   background-color: rgba(244, 213, 141, 0.8);
 }
-.item:nth-child(4) .description h2 {
+.item:nth-child(4) .description a h2 {
   border-color: rgba(0, 0, 0, 0.4);
 }
-.item:nth-child(4) .description,
+.item:nth-child(4) .description a p {
+  color: #000000;
+}
+.item:nth-child(4) .description a,
 .item:nth-child(4) p,
 .item:nth-child(4) h2 {
   color: rgba(0, 0, 0, 0.6);
 }
-.item:nth-child(4):hover p {
-  color: #000000;
-}
 @media all and (max-width: 700px) {
-  .item:nth-child(4) .description,
+  .item:nth-child(4) .description a,
   .item:nth-child(4) p,
   .item:nth-child(4) h2 {
     color: #000000;
