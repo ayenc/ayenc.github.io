@@ -64,6 +64,10 @@ header {
   color: black;
   margin: 0;
   padding: 5px 10px;
+  -webkit-box-shadow: 0px 0px 10px 0px #8f898f;
+  -moz-box-shadow: 0px 0px 10px 0px #8f898f;
+  box-shadow: 0px 0px 10px 0px #8f898f;
+  align-items: center;
 }
 header .logo {
   width: 35px;
@@ -76,7 +80,7 @@ header .logo > a > img {
 }
 header .name {
   font-size: 200%;
-  margin: 10px 10px 10px 2px;
+  margin: 10px 10px 10px 20px;
   text-transform: uppercase;
   align-content: center;
 }
@@ -88,8 +92,24 @@ header .name a:visited,
 header .name a:active {
   color: #000;
 }
+header .name h1 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+header .name h2 {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
 header .name span {
   color: #aa615f;
+}
+header .name sub {
+  font-size: 16px;
 }
 header > h1 {
   position: relative;
@@ -105,7 +125,6 @@ nav {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 0;
   right: 20px;
   z-index: 3;
 }
@@ -132,6 +151,8 @@ nav ul li {
   text-align: center;
   background-color: none;
   color: contrast(none, black, white);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
 }
 nav ul li a {
   text-decoration: none;
@@ -176,7 +197,7 @@ nav ul li a:after {
     position: absolute;
     padding: 20px;
     right: 0px;
-    top: 67px;
+    top: 45px;
     width: 150px;
     border: 1px dashed #000;
   }
@@ -190,10 +211,9 @@ nav ul li a:after {
 .menu {
   color: #444444;
   position: absolute;
-  top: 20px;
-  right: 0;
+  top: -10px;
+  right: 10px;
   padding: 0 20px;
-  line-height: 30px;
 }
 @media all and (min-width: 701px) {
   .menu {
@@ -205,13 +225,10 @@ nav ul li a:after {
     display: block;
   }
 }
-.wrapper {
-  max-width: 100%;
+.container {
   margin: 0 auto;
   position: relative;
   top: 70px;
-}
-.container {
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -220,7 +237,7 @@ nav ul li a:after {
   flex-wrap: wrap;
   justify-content: center;
   padding: 1.5%;
-  background-color: #ffffff;
+  background-color: #ffede8;
 }
 .item {
   position: relative;
@@ -229,7 +246,6 @@ nav ul li a:after {
   margin: 20px 20px 0;
   z-index: auto;
   overflow: hidden;
-  background-color: #fff;
 }
 .item .description a {
   overflow: hidden;
@@ -245,7 +261,7 @@ nav ul li a:after {
   padding-bottom: 5px;
   transition: all .3s linear;
   font-family: 'Raleway', sans-serif;
-  font-size: 12pt;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -258,7 +274,6 @@ nav ul li a:after {
   color: #000;
 }
 .item img {
-  border: 1px solid #bfbfbf;
   max-height: 100%;
   max-width: 100%;
   display: block;
@@ -319,7 +334,7 @@ img.strom {
 }
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 0px;
   width: 100%;
   position: relative;
   top: 80px;

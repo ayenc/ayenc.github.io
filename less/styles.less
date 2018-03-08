@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i|Open+Sans:300i,400,700|Roboto:300,400');
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 //Variables
-@content-bg: #fff;
+@content-bg: #FFEDE8;
 @content-font-family: @font-family-4;
 @content-p-font-size: 10pt;
 @content-p-font-color: #444;
@@ -24,7 +24,7 @@ sans-serif;
 sans-serif;
 @footer-font-family: @font-family-4;
 @h2-font-family: @font-family-3;
-@h2-font-size: 12pt;
+@h2-font-size: 13px;
 @h3-font-family: @font-family-3;
 @h3-font-size: 18pt;
 @h4-font-family: @font-family-4;
@@ -130,6 +130,11 @@ header {
     color: contrast(@header-bg, black, white);
     margin: 0;
     padding: 5px 10px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(143,137,143,1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(143,137,143,1);
+    box-shadow: 0px 0px 10px 0px rgba(143,137,143,1);
+    align-items: center;
+    
     .logo {
         width: 35px;
         height: auto;
@@ -143,7 +148,7 @@ header {
     }
     .name {
         font-size: 200%;
-        margin: 10px 10px 10px 2px;
+        margin: 10px 10px 10px 20px;
         text-transform: uppercase;
         align-content: center;
         a {
@@ -154,8 +159,24 @@ header {
                 color: #000;
             }
         }
+        h1 {
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+            font-family: @font-family-2;
+        }
+        h2 {
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            text-transform: capitalize;
+            font-family: @font-family-3;
+        }
         span {
             color: @last-name-text-color;
+        }
+        sub {
+            font-size: 16px;
         }
     }
     >h1 {
@@ -174,7 +195,6 @@ nav {
     margin: 0;
     padding: 0;
     position: absolute;
-    top: 0;
     right: 20px;
     z-index: 3;
 }
@@ -201,6 +221,8 @@ nav ul li {
     text-align: center;
     background-color: @nav-bg;
     color: contrast(@nav-bg, black, white);
+    font-family: @font-family-4;
+    font-size: 12px;
     a {
         text-decoration: none;
         text-transform: lowercase;
@@ -246,7 +268,7 @@ nav ul li {
         position: absolute;
         padding: 20px;
         right: 0px;
-        top: 67px;
+        top: 45px;
         width: 150px;
         border: 1px dashed #000;
         li {
@@ -261,10 +283,9 @@ nav ul li {
 .menu {
     color: @mobile-menu-bg;
     position: absolute;
-    top: 20px;
-    right: 0;
+    top: -10px;
+    right: 10px;
     padding: 0 20px;
-    line-height: 30px;
     @media all and (min-width: 701px) {
         display: none;
     }
@@ -273,14 +294,10 @@ nav ul li {
     }
 }
 
-.wrapper {
-    max-width: 100%;
+.container {
     margin: 0 auto;
     position: relative;
     top: 70px;
-}
-
-.container {
     display: flex;
     display: -webkit-box;
     display: -moz-box;
@@ -299,7 +316,6 @@ nav ul li {
     margin: 20px 20px 0;
     z-index: auto;
     overflow: hidden;
-    background-color: #fff;
     .description a {
         overflow: hidden;
         transition: all .3s linear;
@@ -327,7 +343,6 @@ nav ul li {
         }
     }
     img {
-        border: 1px solid @item-border-color;
         max-height: 100%;
         max-width: 100%;
         display: block;
@@ -391,7 +406,7 @@ img.strom {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 0px;
     width: 100%;
     position: relative;
     top: 80px;
