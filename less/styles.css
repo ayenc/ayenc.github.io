@@ -237,7 +237,7 @@ nav ul li a:after {
   flex-wrap: wrap;
   justify-content: center;
   padding: 1.5%;
-  background-color: #ffede8;
+  background-color: #222222;
 }
 .item {
   position: relative;
@@ -294,7 +294,7 @@ nav ul li a:after {
 .content {
   font-family: 'Open Sans', sans-serif;
   position: relative;
-  color: #222222;
+  color: #ffffff;
   max-width: 1280px;
   height: auto;
   text-align: left;
@@ -310,7 +310,7 @@ nav ul li a:after {
 }
 .content p {
   font-size: 10pt;
-  color: #444444;
+  color: #ffffff;
   line-height: 1.5;
 }
 .content ul li {
