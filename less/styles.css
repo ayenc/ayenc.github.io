@@ -24,6 +24,9 @@ footer {
   padding: 0;
   margin: 0;
 }
+a {
+  color: #ffc0cb;
+}
 main {
   display: block;
   position: relative;
@@ -318,6 +321,10 @@ nav ul li a:after {
   font-size: 10pt;
 }
 .content ol li {
+  font-size: 10pt;
+}
+span.notes {
+  font-style: italic;
   font-size: 10pt;
 }
 img.strom {
